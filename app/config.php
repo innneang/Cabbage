@@ -39,8 +39,7 @@ $config['mysql']['db'] = 'admin_fridgerecipe';
 $config['mysql']['username'] = 'admin_recipe';
 $config['mysql']['password'] = 'BBJVvgJr0T';
 $config['mysql']['host'] = 'iinnn.net'; //IP Address: 128.199.85.229
-
-/**
+	 /**
 	 * Class constructor
 	 *
 	 * Sets the $config data from the primary config.php file as a class variable.
