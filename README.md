@@ -1,8 +1,7 @@
 # fridgerecipebook
 Playground project by @keenthekeen and @innneang
 
-#หากมีผู้ใจบุญอยากใช้เซิฟเวอร์ตัวเองก็ได้นะคร่ะ
-
+#สนับสนุน Test Server โดย iinnn
 
 #login credentials
 database: admin_fridgerecipe
