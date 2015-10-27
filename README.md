@@ -25,3 +25,5 @@ Server provided by @innneang
 - type: วิธีการทำ เช่น นึ่ง ต้ม ตำ คั่ว ยำ โดยอันนี้อาจจะ hardcode เป็น array ในไฟล์ php ก็ได้ เพราะไม่ค่อยได้แก้
 >>>>>>> origin/master
 Git test line
+
+ควยงง
