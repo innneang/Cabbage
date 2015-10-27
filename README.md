@@ -1,12 +1,7 @@
 # fridgerecipebook
 Playground project by @keenthekeen and @innneang
 
-#สนับสนุน database โดย iinnn
-MySQL Credential
-database: admin_fridgerecipe
-user: admin_recipe
-password: BBJVvgJr0T
-host: 128.199.85.229
+#สนับสนุน server โดย iinnn
 
 #อ่านก่อน!
 - การเข้าถึงฐานข้อมูล จะใช้ PDO เท่านั้น
