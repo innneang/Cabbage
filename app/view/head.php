@@ -5,9 +5,14 @@
  *
  * This script provide the metadata, embed required library, make navigation bar (if any)
  *
- * Usage: Header::create('-page title here-');
+ * Usage: Head::header('-page title here-');
  */
  
- class Header {
- 
+class Head {
+ public function header($title) {
+  
  }
+ public function footer() {
+  
+ }
+}
