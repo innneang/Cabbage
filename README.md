@@ -1,7 +1,6 @@
 # fridgerecipebook
-Playground project by @keenthekeen and @innneang
-
-#สนับสนุน server โดย iinnn
+Playground project by @keenthekeen and @innneang<br />
+Server provided by @innneang
 
 #อ่านก่อน!
 - การเข้าถึงฐานข้อมูล จะใช้ PDO เท่านั้น
