@@ -10,10 +10,6 @@ Playground project by @keenthekeen and @innneang
 - ตั้งชื่อ project ใหม่ด้วย โดยส่วนตัวคิดมาว่า Cabbage
 <<<<<<< HEAD
 
-<<<<<<< HEAD
-
-
-
 =======
 #Database Structure
 - recipe: เก็บข้อมูลอาหาร โดยเก็บเฉพาะที่จะใช้เสิร์ช&แสดงผลการเสิร์ชเท่านั้น ข้อมูลพวกวิธีทำไรงี้ให้แปะลิงก์นอกเอา
@@ -23,4 +19,3 @@ Playground project by @keenthekeen and @innneang
 Git test line
 
 =======
->>>>>>> พยายามหายงง
