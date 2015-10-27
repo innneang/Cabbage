@@ -1,7 +1,7 @@
 <?php
 /* home.php
  * 
- * The only script that user needs to access.
+ * Main page.
  *
  * Simple webpage that display search box to user
  * and use ajax to display the result to the user
