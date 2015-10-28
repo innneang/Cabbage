@@ -1,6 +1,4 @@
 <?php
-defined('ROUTED') OR exit('No direct script access allowed');
-
 /* =======================================================================
  * Config file
  * All shared variable should be here
