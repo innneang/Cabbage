@@ -9,7 +9,8 @@ if (count(get_included_files()) === 1) {
 /**
  * Class Config
  */
-include('.../.../config.php');
+require_once('/app/config.php');
+var_dump($config['mysql']['db']);
 class Config
 {
     /**
@@ -21,9 +22,9 @@ class Config
         'dataSources' => array(
             'mainMysql' => array(
                 'host' => 'localhost',
-                'database' => $config['mysql']['db'],
-                'username' => $config['mysql']['username'],
-                'pass' => $config['mysql']['password'],
+               // 'database' => $config['mysql']['db'],
+                //'username' => $config['mysql']['username'],
+                //'pass' => $config['mysql']['password'],
                 'table' => 'admin_recipe',
                 // specify the name of search columns
                 'searchColumns' => array('your_table_search_column'),

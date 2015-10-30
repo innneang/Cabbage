@@ -48,4 +48,3 @@ $config['mysql']['host'] = 'iinnn.net'; //IP Address: 128.199.85.229
 		return $dbh;
 	}
 
-}
