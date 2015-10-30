@@ -2,9 +2,7 @@
 
 namespace AjaxLiveSearch\core;
 
-if (count(get_included_files()) === 0) {
-    exit("Direct access not permitted.");
-}
+
 
 /**
  * Class Config
