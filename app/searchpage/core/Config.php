@@ -2,30 +2,32 @@
 
 namespace AjaxLiveSearch\core;
 
-
+if (count(get_included_files()) === 1) {
+    exit("Direct access not permitted.");
+}
 
 /**
  * Class Config
  */
-require_once('/app/config.php');
-var_dump($config['mysql']['db']);
+
 class Config
 {
     /**
      * @var array
      */
+
     private static $configs = array(
         // ***** Database ***** //
         'currentDataSource' => 'mainMysql',
         'dataSources' => array(
             'mainMysql' => array(
-                'host' => 'localhost',
-               // 'database' => $config['mysql']['db'],
-                //'username' => $config['mysql']['username'],
-                //'pass' => $config['mysql']['password'],
-                'table' => 'admin_recipe',
+                'host' => 'iinnn.net',
+                'database' => 'admin_fridgerecipe',
+                'username' => 'admin_recipe',
+                'pass' => 'BBJVvgJr0T',
+                'table' => 'recipe',
                 // specify the name of search columns
-                'searchColumns' => array('your_table_search_column'),
+                'searchColumns' => array('ingredient'),
                 // specify order by column. This is optional
                 'orderBy' => '',
                 // specify order direction e.g. ASC or DESC. This is optional
