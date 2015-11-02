@@ -311,9 +311,12 @@
                 // generate HTML
                 foreach ($results as $result) {
                     $HTML .= '<tr>';
-                    foreach ($result as $column) {
+                    /*foreach ($result as $column) {
                         $HTML .= "<td>{$column}</td>";
-                    }
+                    }*/
+                    $HTML .= '<td>'.$result['id'].'</td>';
+                    $HTML .= '<td>'.$result['name'].'</td>';
+                    $HTML .= '<td>'.$result['ingredient'].'</td>';
                     $HTML .= '</tr>';
                 }
 
