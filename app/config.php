@@ -16,7 +16,7 @@
 |
 |	http://example.com/
 */
-$config['base_url'] = ''; //TODO: fill here
+$config['base_url'] = 'http://cabbage.iinnn.net';
 
 /*
 |--------------------------------------------------------------------------
