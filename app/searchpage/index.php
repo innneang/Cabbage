@@ -1,4 +1,5 @@
 <?php
+//This file use hard-coded path in <base> to make it include css&js correctly, so update it when you change base url.
     file_exists(__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'Handler.php') ? require_once(__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'Handler.php') : die('There is no such a file: Handler.php');
     file_exists(__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'Config.php') ? require_once(__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'Config.php') : die('There is no such a file: Config.php');
 
@@ -18,6 +19,7 @@ if (session_id() == '') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="http://cabbage.iinnn.net/app/searchpage/" target="_blank" />
     <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
