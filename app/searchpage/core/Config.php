@@ -27,7 +27,7 @@ class Config
                 'pass' => 'BBJVvgJr0T',
                 'table' => 'recipe',
                 // specify the name of search columns
-                'searchColumns' => array('ingredient'),
+                //'searchColumns' => array('ingredient'),
                 // specify order by column. This is optional
                 'orderBy' => '',
                 // specify order direction e.g. ASC or DESC. This is optional
