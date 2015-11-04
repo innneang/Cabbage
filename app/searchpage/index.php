@@ -48,7 +48,11 @@ if (session_id() == '') {
                     </div>
                 </div>
             </div>
-            <div class="cover-image" style="background-image: url(https://images.unsplash.com/31/RpgvvtYAQeqAIs1knERU_vegetables.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&s=b58ce4cf84e23c434c16b5297a7847a9);"></div>
+            <?php
+            
+                $background = array('https://images.unsplash.com/photo-1428515613728-6b4607e44363?ixlib=rb-0.3.5&q=80&fm=jpg&s=e522c8e8cbb86cea4129c1e47867dbe9', 'https://images.unsplash.com/photo-1445373466703-25dbffd5f6a5?ixlib=rb-0.3.5&q=80&fm=jpg&s=b8688816b1fbf855521a32ac76e2f99c', 'https://images.unsplash.com/photo-1430931071372-38127bd472b8?ixlib=rb-0.3.5&q=80&fm=jpg&s=4d8b97be78b1ea15be104ac160d39f61');
+            ?>
+            <div class="cover-image" style="background-image: url('<?php echo $background[array_rand($background)]; ?>');"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
