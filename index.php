@@ -1,3 +1,3 @@
 <?php
-require(__DIR__ . 'app/searchpage/index.php');
+require( dirname(__FILE__) . 'app/searchpage/index.php');
 ?>
