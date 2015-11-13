@@ -18,8 +18,10 @@ require('config.php');
 </head>
 <body>
 	<main class="container">
-	<h1>Hello, world!</h1>
-	</main>
+	<h1><?=$config['name']?>!</h1>
+<div id="the-basics">
+  <input class="typeahead" type="text" placeholder="States of USA">
+</div>	</main>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
 <script>
