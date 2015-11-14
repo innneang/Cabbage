@@ -16,7 +16,7 @@
 |
 |	http://example.com/
 */
-$config['base_url'] = 'http://cabbage.iinnn.net';
+$config['base_url'] = 'http://beta.cabbage.iinnn.net';
 
 /*
 |--------------------------------------------------------------------------
