@@ -47,16 +47,20 @@ var substringMatcher = function(strs) {
   };
 };
 
-var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-  'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-  'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-];
+<?php
+require('config.php');
+$db=getPDO();
+$ing=$db->query('SELECT ingredient FROM recipe');
+$ind=$ing->fetch(PDO::FETCH_ASSOC);
+echo 'var states = [';
+foreach ($ind['ingredient'] as $inv) {
+  $ina=explode(',',$inv);
+  foreach ($ina as $inav) {
+    echo "'$inav',";
+  }
+}
+echo '];';
+?>
 
 $('#the-basics .typeahead').typeahead({
   hint: true,
