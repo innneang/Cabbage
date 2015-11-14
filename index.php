@@ -51,7 +51,6 @@ var substringMatcher = function(strs) {
 };
 
 <?php
-require('config.php');
 $db=getPDO();
 $ing=$db->query('SELECT ingredient FROM recipe');
 $ind=$ing->fetch(PDO::FETCH_ASSOC);
