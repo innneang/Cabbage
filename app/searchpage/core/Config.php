@@ -34,7 +34,7 @@ class Config
                 'orderDirection' => '',
                 // filter the result by entering table column names
                 // to get all the columns, remove filterResult or make it an empty array
-                'filterResult' => array(),
+                'filterResult' => array('ingredient'),
                 // specify search query comparison operator. possible values for comparison operators are: 'LIKE' and '='. this is required.
                 'comparisonOperator' => 'LIKE',
                 // searchPattern is used to specify how the query is searched. possible values are: 'q', '*q', 'q*', '*q*'. this is required.
