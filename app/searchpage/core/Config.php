@@ -52,7 +52,7 @@ class Config
         // Assigning more than 3 seconds is not recommended
         'searchStartTimeOffset' => 2,
         // ***** Search Input ***** /
-        'maxInputLength' => 20
+        'maxInputLength' => 30000
     );
 
     /**
