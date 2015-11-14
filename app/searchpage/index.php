@@ -76,7 +76,7 @@ if (session_id() == '') {
                                 <a href="#">Home</a>
                             </li>
                             <li>
-                                <a href="#">Contacts</a>
+                                <a href="/contacts.php">Contacts</a>
                             </li>
                         </ul>
                     </div>
@@ -87,7 +87,7 @@ if (session_id() == '') {
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h1 class="text-inverse">What is in your fridge?</h1>
+                        <h1 style="text-shadow: 2px 2px 5px grey;" class="text-inverse">What is in your fridge?</h1>
                         <form accept-charset="UTF-8" class="search" id="ls_form" name="ls_form">
         <?php
             // Set javascript anti bot value in the session
