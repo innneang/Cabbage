@@ -38,7 +38,7 @@ $config['mysql']['password'] = 'BBJVvgJr0T';
 $config['mysql']['host'] = 'iinnn.net'; //IP Address: 128.199.85.229
 
 
-if (!empty($database)) {
+function getPDO() {
 		try {
 			$dbh = new PDO('mysql:dbname='.$config['mysql']['db'].';host='.$config['mysql']['host'], $config['mysql']['username'], $config['mysql']['password']);
 		} catch (PDOException $e) {
