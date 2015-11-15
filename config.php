@@ -32,15 +32,15 @@ $config['name'] = 'Cabbage';
 | MySQL Database Credential
 |--------------------------------------------------------------------------
 */
-$config['mysql']['db'] = 'admin_fridgerecipe';
+/*$config['mysql']['db'] = 'admin_fridgerecipe';
 $config['mysql']['username'] = 'admin_recipe';
 $config['mysql']['password'] = 'BBJVvgJr0T';
-$config['mysql']['host'] = 'iinnn.net'; //IP Address: 128.199.85.229
+$config['mysql']['host'] = 'iinnn.net'; //IP Address: 128.199.85.229 */
 
 
 function getPDO() {
 		try {
-			$dbh = new PDO('mysql:dbname='.$config['mysql']['db'].';host='.$config['mysql']['host'], $config['mysql']['username'], $config['mysql']['password']);
+			$dbh = new PDO('mysql:dbname=admin_fridgerecipe;host=localhost', 'admin_recipe', 'BBJVvgJr0T');
 		} catch (PDOException $e) {
 			$dbh = false;
 			echo 'Connection failed: ' . $e->getMessage();
