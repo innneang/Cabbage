@@ -92,8 +92,8 @@ function addIngredient () {
   		var inp = $("#input").val();
   		if (!$.inArray(inp,ingredient)) {
         		ingredient.push(inp);
-        		var inr = $("#ingredient").html();
-        		var inn = inr+'<div class="alert alert-info" role="alert">'+inp+'</div>';
+        		//var inr = $("#ingredient").html();
+        		var inn = '<div class="alert alert-info" role="alert">'+inp+'</div>';
         		$("#ingredient").html(inn);
     		}
   	}
