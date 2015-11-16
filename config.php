@@ -40,7 +40,7 @@ $config['mysql']['host'] = 'iinnn.net'; //IP Address: 128.199.85.229 */
 
 function getPDO() {
 		try {
-			$dbh = new PDO('mysql:dbname=admin_fridgerecipe;host=localhost;charset=utf-8', 'admin_recipe', 'BBJVvgJr0T');
+			$dbh = new PDO('mysql:dbname=admin_fridgerecipe;host=localhost;charset=utf8', 'admin_recipe', 'BBJVvgJr0T');
 		} catch (PDOException $e) {
 			$dbh = false;
 			echo 'Connection failed: ' . $e->getMessage();
