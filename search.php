@@ -22,7 +22,7 @@ if ($ing->execute()) {
    <div class="card">
   <img class="card-img-top" data-src="holder.js/100%x180/" alt="Card image cap">
   <div class="card-block">
-    <h4 class="card-title"><href = "<?=$inf['link']?>"><?=$inf['name']?></href></h4> 
+    <h4 class="card-title"><a href = "<?=$inf['link']?>"><?=$inf['name']?></a></h4> 
     <p class="card-text">Ingredient: <?=$inf['ingredient']?></p>
   </div>
 </div>
