@@ -6,7 +6,7 @@
  * Output: Display recipe list to user
  */
  
-if (!empty($_GET['ingredient'])) {
+if (isset($_GET['ingredient'])) {
   $keyw='';
  foreach ($_GET['ingredient'] as $ing) {
    $keyw.=$ing.' ';
@@ -23,7 +23,7 @@ if ($ing->execute()) {
   <img class="card-img-top" data-src="holder.js/100%x180/" alt="Card image cap">
   <div class="card-block">
     <h4 class="card-title"><?=$inf['name']?></h4> 
-    <p class="card-text"></p>
+    <p class="card-text"><?php echo $inf['</p>
     <a href="#" class="btn btn-primary">Button</a>
   </div>
 </div>
