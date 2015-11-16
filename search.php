@@ -28,7 +28,9 @@ if ($ing->execute()) {
   </div>
 </div>
   <?php }
-  //More code here
+} else {
+ echo 'MySQL Fetch Error';
+}
 } else {
   echo 'Empty parameter!';
 }
