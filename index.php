@@ -91,6 +91,8 @@ $(function(){
   		var inp = $("#input").val();
   		if (!ingredient.inArray(inp)) {
         		ingredient.push(inp);
+        		var inr = $("#ingredient").html();
+        		var inn = inr+'<div class="alert alert-info" role="alert">'+inp+'</div>';
     		}
   	}
 });
