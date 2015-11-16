@@ -24,7 +24,7 @@ require('config.php');
 </div>
 <div id="the-basics">
   <input class="typeahead" type="text" id="input" placeholder="Ingredient" />
-  <button type="button" class="btn btn-primary">ค้นหา</button>
+  <button type="button" class="btn btn-primary" onclick="addIngredient()">เพิ่ม</button>
 </div>	
 <div id="result">
 	
