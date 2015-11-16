@@ -90,10 +90,12 @@ $(function(){
 var ingredient = new Array();
 function addIngredient () {
   		var inp = $("#input").val();
-  		if ($.inArray(inp,ingredient) >= 0) {
+  		if ($.inArray(inp,ingredient) < 0) {
+  			console.log('Input not exist!');
         		ingredient.push(inp);
         		$("#ingredient").append('<div class="alert alert-info" role="alert">'+inp+'</div>');
     		}
+    		$("#input").val('');
   	}
 </script>
 </body>
