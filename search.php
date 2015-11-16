@@ -14,8 +14,8 @@ if (isset($_GET['ingredient'])) {
  $keyw=trim($keyw);
 require('config.php');
 $db=getPDO();
-$ing=$db->prepare('SELECT * FROM recipe WHERE MATCH (ingredient) AGAINST (:keyword)');
-$ing->bindParam(':keyword',$keyw);
+$ing=$db->prepare('SELECT * FROM recipe');
+//$ing->bindParam(':keyword',$keyw);
 if ($ing->execute()) {
   $ind=$ing->fetchAll();
   foreach ($ind as $inf) { ?>
