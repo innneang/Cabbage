@@ -77,7 +77,9 @@ $('#the-basics .typeahead').typeahead({
 });</script>
 <script>
 $(function(){
-	
+	$( "#submit" ).click(function(){
+  		$( "#result" ).load( "search.php" );
+  	});	
 });
 </script>
 </body>
