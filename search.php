@@ -5,7 +5,7 @@
  * Process: Search database for recipe using entered ingredients
  * Output: Display recipe list to user
  */
- 
+header('Content-Type: text/html; charset=utf-8');
 if (isset($_GET['ingredient'])) {
   $keyw='';
  foreach ($_GET['ingredient'] as $ing) {
