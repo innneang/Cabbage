@@ -81,23 +81,22 @@ $('#the-basics .typeahead').typeahead({
   source: substringMatcher(states)
 });</script>
 <script>
-var main = $(function(){
+$(function(){
 	$( "#submit" ).click(function(){
   		$( "#result" ).load( "search.php" );
   		$( "#ingredient" ).append("something");
   	});
-  	var ingredient = new Array();
-  	function addIngredient () {
+});
+var ingredient = new Array();
+function addIngredient () {
   		var inp = $("#input").val();
-  		if (!ingredient.inArray(inp)) {
+  		if (!$.inArray(inp,ingredient)) {
         		ingredient.push(inp);
         		var inr = $("#ingredient").html();
         		var inn = inr+'<div class="alert alert-info" role="alert">'+inp+'</div>';
         		$("#ingredient").html(inn);
     		}
   	}
-});
-$(document).ready(main);
 </script>
 </body>
 </html>
