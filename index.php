@@ -93,6 +93,7 @@ $(function(){
         		ingredient.push(inp);
         		var inr = $("#ingredient").html();
         		var inn = inr+'<div class="alert alert-info" role="alert">'+inp+'</div>';
+        		$("#ingredient").html(inn);
     		}
   	}
 });
