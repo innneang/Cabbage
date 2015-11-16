@@ -59,7 +59,7 @@ echo 'var states = [';
 foreach ($ind['ingredient'] as $inv) {
   $ina=explode(',',$inv);
   foreach ($ina as $inav) {
-    echo "'$inav',";
+    echo '"'.$inav.'",';
   }
 }
 echo '];';
