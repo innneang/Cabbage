@@ -56,8 +56,8 @@ $ing=$db->query('SELECT ingredient FROM recipe');
 $ind=$ing->fetchAll();
 //echo '//'.var_dump($ind)."\n";
 echo 'var states = [';
-foreach ($ind['ingredient'] as $inv) {
-  $ina=explode(',',$inv);
+foreach ($ind as $inv) {
+  $ina=explode(',',$inv[0]);
   foreach ($ina as $inav) {
     echo '"'.$inav.'",';
   }
