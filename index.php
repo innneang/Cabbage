@@ -19,6 +19,9 @@ require('config.php');
 <body>
 	<main class="container">
 	<h1><?=$config['name']?>!</h1>
+<div id="result">
+	<placeholder></placeholder>
+</div>
 <div id="the-basics">
   <input class="typeahead ingredient" type="text" name="ingredient[]" placeholder="Ingredient" />
   <input class="typeahead ingredient" type="text" name="ingredient[]" placeholder="Ingredient" />
@@ -79,6 +82,7 @@ $('#the-basics .typeahead').typeahead({
 $(function(){
 	$( "#submit" ).click(function(){
   		$( "#result" ).load( "search.php" );
+  		$( "#result" ).append("something");
   	});	
 });
 </script>
