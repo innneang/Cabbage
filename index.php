@@ -81,14 +81,13 @@ $('#the-basics .typeahead').typeahead({
   source: substringMatcher(states)
 });</script>
 <script>
-$(function(){
+var main = $(function(){
 	$( "#submit" ).click(function(){
   		$( "#result" ).load( "search.php" );
   		$( "#ingredient" ).append("something");
   	});
   	var ingredient = new Array();
-});
-function addIngredient () {
+  	function addIngredient () {
   		var inp = $("#input").val();
   		if (!ingredient.inArray(inp)) {
         		ingredient.push(inp);
@@ -97,6 +96,8 @@ function addIngredient () {
         		$("#ingredient").html(inn);
     		}
   	}
+});
+$(document).ready(main);
 </script>
 </body>
 </html>
