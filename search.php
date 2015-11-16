@@ -23,15 +23,12 @@ if ($ing->execute()) {
   <img class="card-img-top" data-src="holder.js/100%x180/" alt="Card image cap">
   <div class="card-block">
     <h4 class="card-title"><?=$inf['name']?></h4> 
-    <p class="card-text"><?php echo $inf['</p>
+    <p class="card-text">Ingredient: <?=$inf['ingredient']?></p>
     <a href="#" class="btn btn-primary">Button</a>
   </div>
 </div>
   <?php }
   //More code here
-} else {
-  echo 'ERROR'; //TODO: Add more user-friendly error page
-}
 } else {
   echo 'Empty parameter!';
 }
