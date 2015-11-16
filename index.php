@@ -54,6 +54,7 @@ var substringMatcher = function(strs) {
 $db=getPDO();
 $ing=$db->query('SELECT ingredient FROM recipe');
 $ind=$ing->fetchAll();
+echo '//'.var_dump($ind)."\n";
 echo 'var states = [';
 foreach ($ind['ingredient'] as $inv) {
   $ina=explode(',',$inv);
