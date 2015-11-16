@@ -24,7 +24,7 @@ require('config.php');
 </div>
 <div id="the-basics"><form onsubmit="addIngredient();return false;">
   <input class="typeahead" type="text" id="input" placeholder="Ingredient" />
-  <button type="button" class="btn btn-primary" onclick="addIngredient()">เพิ่ม</button>
+  <input type="submit" class="btn btn-primary" onclick="addIngredient()">เพิ่ม</button>
 </div></form>
 <div id="result">
 	
