@@ -19,15 +19,19 @@ require('config.php');
 <body>
 	<main class="container">
 	<h1><?=$config['name']?>!</h1>
-<div id="result">
-	<placeholder></placeholder>
+<div id="ingredient">
+	
 </div>
 <div id="the-basics">
   <input class="typeahead ingredient" type="text" name="ingredient[]" placeholder="Ingredient" />
   <input class="typeahead ingredient" type="text" name="ingredient[]" placeholder="Ingredient" />
   <input class="typeahead ingredient" type="text" name="ingredient[]" placeholder="Ingredient" />
   <button type="button" class="btn btn-primary">ค้นหา</button>
-</div>	</main>
+</div>	
+<div id="result">
+	
+</div>
+</main>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.jquery.min.js"></script>
@@ -82,7 +86,7 @@ $('#the-basics .typeahead').typeahead({
 $(function(){
 	$( "#submit" ).click(function(){
   		$( "#result" ).load( "search.php" );
-  		$( "#result" ).append("something");
+  		$( "#ingredient" ).append("something");
   	});	
 });
 </script>
