@@ -23,9 +23,7 @@ require('config.php');
 	
 </div>
 <div id="the-basics">
-  <input class="typeahead ingredient" type="text" name="ingredient[]" placeholder="Ingredient" />
-  <input class="typeahead ingredient" type="text" name="ingredient[]" placeholder="Ingredient" />
-  <input class="typeahead ingredient" type="text" name="ingredient[]" placeholder="Ingredient" />
+  <input class="typeahead" type="text" id="input" placeholder="Ingredient" />
   <button type="button" class="btn btn-primary">ค้นหา</button>
 </div>	
 <div id="result">
@@ -87,7 +85,14 @@ $(function(){
 	$( "#submit" ).click(function(){
   		$( "#result" ).load( "search.php" );
   		$( "#ingredient" ).append("something");
-  	});	
+  	});
+  	var ingredient = new Array();
+  	function addIngredient () {
+  		var inp = $("#input").val();
+  		if (!ingredient.inArray(inp)) {
+        		ingredient.push(inp);
+    		}
+  	}
 });
 </script>
 </body>
