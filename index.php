@@ -87,7 +87,8 @@ $(function(){
   		$( "#ingredient" ).append("something");
   	});
   	var ingredient = new Array();
-  	function addIngredient () {
+});
+function addIngredient () {
   		var inp = $("#input").val();
   		if (!ingredient.inArray(inp)) {
         		ingredient.push(inp);
@@ -96,7 +97,6 @@ $(function(){
         		$("#ingredient").html(inn);
     		}
   	}
-});
 </script>
 </body>
 </html>
