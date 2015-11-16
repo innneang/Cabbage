@@ -22,10 +22,10 @@ require('config.php');
 <div id="ingredient">
 	
 </div>
-<div id="the-basics">
+<div id="the-basics"><form onsubmit="addIngredient();return false;">
   <input class="typeahead" type="text" id="input" placeholder="Ingredient" />
   <button type="button" class="btn btn-primary" onclick="addIngredient()">เพิ่ม</button>
-</div>	
+</div></form>
 <div id="result">
 	
 </div>
