@@ -90,7 +90,7 @@ $(function(){
 var ingredient = new Array();
 function addIngredient () {
   		var inp = $("#input").val();
-  		if (!$.inArray(inp,ingredient)) {
+  		if ($.inArray(inp,ingredient) >= 0) {
         		ingredient.push(inp);
         		$("#ingredient").append('<div class="alert alert-info" role="alert">'+inp+'</div>');
     		}
