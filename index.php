@@ -16,8 +16,7 @@ require('config.php');
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css" />
 </head>
 <body>
-	<nav class="navbar navbar-light bg-primary">
-		<div class="container">
+	<nav class="navbar navbar-light bg-faded">
 			<a class="navbar-brand" href="#">Cabbage</a>
 			<ul class="nav navbar-nav">
 				<li class="nav-item active">
@@ -27,7 +26,6 @@ require('config.php');
 					<a class="nav-link" href="#">About</a>
 				</li>
 			</ul>
-		</div>
 	</nav>
 	<main class="container">
 		<h1><?=$config['name']?>!</h1>
@@ -37,7 +35,7 @@ require('config.php');
 		<form onsubmit="addIngredient();return false;"><div id="the-basics">
 			<input class="typeahead" type="text" id="input" placeholder="Ingredient" />
 			<input type="submit" class="btn btn-secondary" value="เพิ่ม" />
-			<button type="button" class="btn btn-primary" id="submit" value="ค้นหา" />
+			<button type="button" class="btn btn-primary" id="submit">ค้นหา</button>
 		</div></form>
 		<div id="result">
 
