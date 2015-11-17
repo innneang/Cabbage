@@ -97,7 +97,7 @@ $('#the-basics .typeahead').typeahead({
 			$( "#result" ).text('Loading....');
 			var ingget = '';
 			ingredient.forEach(function(entry) {
-				if (str.length > 0) {
+				if (ingget.length > 0) {
 					ingget += '&';
 				}
 				ingget += 'ingredient[]='+entry;
