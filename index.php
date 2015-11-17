@@ -1,6 +1,5 @@
 <?php
 /* Index file
- * 
  * Search page goes here
  *
  * This page use BOOTSTRAP v4.0.0-alpha! ::::: http://v4-alpha.getbootstrap.com/
@@ -35,9 +34,10 @@ require('config.php');
 		<div id="ingredient">
 
 		</div>
-		<div id="the-basics"><form onsubmit="addIngredient();return false;">
+		<form onsubmit="addIngredient();return false;"><div id="the-basics">
 			<input class="typeahead" type="text" id="input" placeholder="Ingredient" />
-			<input type="submit" class="btn btn-primary" onclick="addIngredient()" value="เพิ่ม" />
+			<input type="submit" class="btn btn-secondary" value="เพิ่ม" />
+			<button type="button" class="btn btn-primary" id="submit" value="ค้นหา" />
 		</div></form>
 		<div id="result">
 
@@ -73,7 +73,6 @@ require('config.php');
 $db=getPDO();
 $ing=$db->query('SELECT ingredient FROM recipe');
 $ind=$ing->fetchAll();
-//echo '//'.var_dump($ind)."\n";
 echo 'var states = [';
 foreach ($ind as $inv) {
 	$ina=explode(',',$inv[0]);
@@ -94,13 +93,21 @@ $('#the-basics .typeahead').typeahead({
 	source: substringMatcher(states)
 });</script>
 <script>
+	var ingredient = new Array();
 	$(function(){
 		$( "#submit" ).click(function(){
-			$( "#result" ).load( "search.php" );
+			$( "#result" ).text('Loading....');
+			var ingget = '';
+			ingredient.forEach(function(entry) {
+				if (str.length > 0) {
+					ingget += '&';
+				}
+				ingget += 'ingredient[]='+entry;
+			});
+			$( "#result" ).load( "search.php?"+ingget);
 			$( "#ingredient" ).append("something");
 		});
 	});
-	var ingredient = new Array();
 	function addIngredient () {
 		var inp = $("#input").val();
 		if ($.inArray(inp,ingredient) < 0) {
