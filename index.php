@@ -17,26 +17,39 @@ require('config.php');
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css" />
 </head>
 <body>
+	<nav class="navbar navbar-light bg-primary">
+		<div class="container">
+			<a class="navbar-brand" href="#">Cabbage</a>
+			<ul class="nav navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 	<main class="container">
-	<h1><?=$config['name']?>!</h1>
-<div id="ingredient">
-	
-</div>
-<div id="the-basics"><form onsubmit="addIngredient();return false;">
-  <input class="typeahead" type="text" id="input" placeholder="Ingredient" />
-  <input type="submit" class="btn btn-primary" onclick="addIngredient()" value="เพิ่ม" />
-</div></form>
-<div id="result">
-	
-</div>
-</main>
+		<h1><?=$config['name']?>!</h1>
+		<div id="ingredient">
+
+		</div>
+		<div id="the-basics"><form onsubmit="addIngredient();return false;">
+			<input class="typeahead" type="text" id="input" placeholder="Ingredient" />
+			<input type="submit" class="btn btn-primary" onclick="addIngredient()" value="เพิ่ม" />
+		</div></form>
+		<div id="result">
+
+		</div>
+	</main>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.jquery.min.js"></script>
-<script>
-var substringMatcher = function(strs) {
-  return function findMatches(q, cb) {
-    var matches, substringRegex;
+	<script>
+		var substringMatcher = function(strs) {
+			return function findMatches(q, cb) {
+				var matches, substringRegex;
 
     // an array that will be populated with substring matches
     matches = [];
@@ -47,13 +60,13 @@ var substringMatcher = function(strs) {
     // iterate through the pool of strings and for any string that
     // contains the substring `q`, add it to the `matches` array
     $.each(strs, function(i, str) {
-      if (substrRegex.test(str)) {
-        matches.push(str);
-      }
+    	if (substrRegex.test(str)) {
+    		matches.push(str);
+    	}
     });
 
     cb(matches);
-  };
+};
 };
 
 <?php
@@ -63,40 +76,40 @@ $ind=$ing->fetchAll();
 //echo '//'.var_dump($ind)."\n";
 echo 'var states = [';
 foreach ($ind as $inv) {
-  $ina=explode(',',$inv[0]);
-  foreach ($ina as $inav) {
-    echo '"'.$inav.'",';
-  }
+	$ina=explode(',',$inv[0]);
+	foreach ($ina as $inav) {
+		echo '"'.$inav.'",';
+	}
 }
 echo '];';
 ?>
 
 $('#the-basics .typeahead').typeahead({
-  hint: true,
-  highlight: true,
-  minLength: 1
+	hint: true,
+	highlight: true,
+	minLength: 1
 },
 {
-  name: 'states',
-  source: substringMatcher(states)
+	name: 'states',
+	source: substringMatcher(states)
 });</script>
 <script>
-$(function(){
-	$( "#submit" ).click(function(){
-  		$( "#result" ).load( "search.php" );
-  		$( "#ingredient" ).append("something");
-  	});
-});
-var ingredient = new Array();
-function addIngredient () {
-  		var inp = $("#input").val();
-  		if ($.inArray(inp,ingredient) < 0) {
-  			console.log('Input not exist!');
-        		ingredient.push(inp);
-        		$("#ingredient").append('<div class="alert alert-info" role="alert">'+inp+'</div>');
-    		}
-    		$("#input").val('');
-  	}
+	$(function(){
+		$( "#submit" ).click(function(){
+			$( "#result" ).load( "search.php" );
+			$( "#ingredient" ).append("something");
+		});
+	});
+	var ingredient = new Array();
+	function addIngredient () {
+		var inp = $("#input").val();
+		if ($.inArray(inp,ingredient) < 0) {
+			console.log('Input not exist!');
+			ingredient.push(inp);
+			$("#ingredient").append('<div class="alert alert-info" role="alert">'+inp+'</div>');
+		}
+		$("#input").val('');
+	}
 </script>
 </body>
 </html>
