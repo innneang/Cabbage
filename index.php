@@ -1,8 +1,6 @@
 <?php
 /* Index file
  * Search page goes here
- *
- * This page use BOOTSTRAP v4.0.0-alpha! ::::: http://v4-alpha.getbootstrap.com/
  */
 require('config.php');
 ?>
@@ -13,41 +11,37 @@ require('config.php');
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
 	<title><?=$config['name']?></title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css" />
-	<style>
-	body {
-		background-color: #42a5f5;
-	}
-	</style>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css" rel="stylesheet" />
 </head>
-<body>
-	<nav class="navbar navbar-light container">
-		<a class="navbar-brand" href="#">Cabbage</a>
-		<ul class="nav navbar-nav">
-			<li class="nav-item active">
-				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">About</a>
-			</li>
-		</ul>
-	</nav>
-	<main class="container">
+<body class="blue lighten-2">
+	<nav class="blue" role="navigation">
+<div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Cabbage</a>
+<ul class="right hide-on-med-and-down">
+<li class="tooltipped" data-tooltip="Home"><a href="#">หน้าหลัก</a></li>
+<li class="tooltipped" data-tooltip="Contact"><a href="https://keendev.net/contact">ติดต่อเรา</a></li>
+</ul>
+</div>
+</nav>
+	<main class="container" style="padding-top:10px">
 		<h1><?=$config['name']?>!</h1>
 		<div id="ingredient">
 
 		</div>
-		<form onsubmit="addIngredient();return false;"><div id="the-basics">
+		<form onsubmit="addIngredient();return false;">
+			<div id="the-basics" class="input-field">
+          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
 			<input class="typeahead" type="text" id="input" placeholder="Ingredient" />
-			<input type="submit" class="btn btn-secondary" value="เพิ่ม" />
+		</div>
+					<input type="submit" class="btn btn-secondary" value="เพิ่ม" />
 			<button type="button" class="btn btn-primary" id="submit">ค้นหา</button>
-		</div></form>
+		</form>
 		<div id="result">
 
 		</div>
 	</main>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.jquery.min.js"></script>
 	<script>
 		var substringMatcher = function(strs) {
