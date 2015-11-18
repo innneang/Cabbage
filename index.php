@@ -14,18 +14,23 @@ require('config.php');
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
 	<title><?=$config['name']?></title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css" />
+	<style>
+	body {
+		background-color: #42a5f5;
+	}
+	</style>
 </head>
 <body>
-	<nav class="navbar navbar-light bg-faded">
-			<a class="navbar-brand" href="#">Cabbage</a>
-			<ul class="nav navbar-nav">
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">About</a>
-				</li>
-			</ul>
+	<nav class="navbar navbar-light container">
+		<a class="navbar-brand" href="#">Cabbage</a>
+		<ul class="nav navbar-nav">
+			<li class="nav-item active">
+				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">About</a>
+			</li>
+		</ul>
 	</nav>
 	<main class="container">
 		<h1><?=$config['name']?>!</h1>
@@ -48,16 +53,10 @@ require('config.php');
 		var substringMatcher = function(strs) {
 			return function findMatches(q, cb) {
 				var matches, substringRegex;
+    matches = []; // an array that will be populated with substring matches
+    substrRegex = new RegExp(q, 'i'); // regex used to determine if a string contains the substring `q`
 
-    // an array that will be populated with substring matches
-    matches = [];
-
-    // regex used to determine if a string contains the substring `q`
-    substrRegex = new RegExp(q, 'i');
-
-    // iterate through the pool of strings and for any string that
-    // contains the substring `q`, add it to the `matches` array
-    $.each(strs, function(i, str) {
+    $.each(strs, function(i, str) { // iterate through the pool of strings and for any string that contains the substring `q`, add it to the `matches` array
     	if (substrRegex.test(str)) {
     		matches.push(str);
     	}
@@ -85,8 +84,7 @@ $('#the-basics .typeahead').typeahead({
 	hint: true,
 	highlight: true,
 	minLength: 1
-},
-{
+}, {
 	name: 'states',
 	source: substringMatcher(states)
 });</script>
@@ -103,7 +101,6 @@ $('#the-basics .typeahead').typeahead({
 				ingget += 'ingredient[]='+entry;
 			});
 			$( "#result" ).load( "search.php?"+ingget);
-			$( "#ingredient" ).append("something");
 		});
 	});
 	function addIngredient () {
