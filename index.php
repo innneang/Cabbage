@@ -18,21 +18,18 @@ require('config.php');
 	body {
 		background-color: #42a5f5;
 	}
+	.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+main {
+	width:80%;
+}
 	</style>
 </head>
 <body>
-	<nav class="navbar navbar-light container">
-		<a class="navbar-brand" href="#">Cabbage</a>
-		<ul class="nav navbar-nav">
-			<li class="nav-item active">
-				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">About</a>
-			</li>
-		</ul>
-	</nav>
-	<main class="container">
+	<main class="container vcenter">
 		<h1><?=$config['name']?>!</h1>
 		<div id="ingredient">
 
