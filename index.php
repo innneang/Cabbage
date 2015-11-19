@@ -100,7 +100,7 @@ require('config.php');
 			if ($.inArray(inp,ingredient) < 0 && inp.length > 0) {
 				console.log('Input not exist!');
 				ingredient.push(inp);
-				$("#ingredient").append('<div class="alert alert-info" role="alert" onclick="removeIngredient('+inp+')">'+inp+'</div>');
+				$("#ingredient").append('<div class="alert alert-info" role="alert" onclick="removeIngredient(\''+inp+'\')">'+inp+'</div>');
 			}
 			$("#input").val('');
 		}
