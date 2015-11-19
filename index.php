@@ -24,7 +24,8 @@ require('config.php');
     float: none;
 }
 main {
-	height:80%;
+	width:90%;
+	margin:auto;
 	text-align:center;
 }
 	</style>
