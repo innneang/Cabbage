@@ -22,8 +22,6 @@ $config['base_url'] = 'http://beta.cabbage.iinnn.net';
 |--------------------------------------------------------------------------
 | Site Name
 |--------------------------------------------------------------------------
-|
-| Site name, for example, Cabbage
 */
 $config['name'] = 'Cabbage';
 
