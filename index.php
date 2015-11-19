@@ -16,7 +16,7 @@ require('config.php');
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css" />
 	<style>
 	body {
-		background-color: #42a5f5;
+
 	}
 	.vcenter {
     display: inline-block;
@@ -24,7 +24,8 @@ require('config.php');
     float: none;
 }
 main {
-	width:80%;
+	height:80%;
+	text-align:center;
 }
 	</style>
 </head>
