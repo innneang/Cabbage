@@ -50,9 +50,9 @@ require('config.php');
 				$.each(strs, function(i, str) {
 					// iterate through the pool of strings and for any string that contains the substring `q`, add it to the `matches` array
 					if (substrRegex.test(str)) {
-    						matches.push(str);
-    					}
-    				});
+						matches.push(str);
+					}
+				});
 				cb(matches);
 			};
 		};
@@ -79,31 +79,37 @@ require('config.php');
 			name: 'states',
 			source: substringMatcher(states)
 		});
-</script>
-<script>
-	var ingredient = new Array();
-	$(function(){
-		$( "#submit" ).click(function(){
-			$( "#result" ).text('Loading....');
-			var ingget = '';
-			ingredient.forEach(function(entry) {
-				if (ingget.length > 0) {
-					ingget += '&';
-				}
-				ingget += 'ingredient[]='+entry;
+	</script>
+	<script>
+		var ingredient = new Array();
+		$(function(){
+			$( "#submit" ).click(function(){
+				$( "#result" ).text('Loading....');
+				var ingget = '';
+				ingredient.forEach(function(entry) {
+					if (ingget.length > 0) {
+						ingget += '&';
+					}
+					ingget += 'ingredient[]='+entry;
+				});
+				$( "#result" ).load( "search.php?"+ingget);
 			});
-			$( "#result" ).load( "search.php?"+ingget);
 		});
-	});
-	function addIngredient () {
-		var inp = $("#input").val();
-		if ($.inArray(inp,ingredient) < 0 && inp.length > 0) {
-			console.log('Input not exist!');
-			ingredient.push(inp);
-			$("#ingredient").append('<div class="alert alert-info" role="alert">'+inp+'</div>');
+		function addIngredient () {
+			var inp = $("#input").val();
+			if ($.inArray(inp,ingredient) < 0 && inp.length > 0) {
+				console.log('Input not exist!');
+				ingredient.push(inp);
+				$("#ingredient").append('<div class="alert alert-info" role="alert" onclick="removeIngredient('+inp+')">'+inp+'</div>');
+			}
+			$("#input").val('');
 		}
-		$("#input").val('');
-	}
-</script>
+		function removeIngredient (rm) {
+			var index = ingredient.indexOf(rm);
+			if (index > -1) {
+				ingredient.splice(index, 1);
+			}
+		}
+	</script>
 </body>
 </html>
