@@ -105,6 +105,7 @@ require('config.php');
 			$("#input").val('');
 		}
 		function removeIngredient (rm) {
+			console.log('Removing '+rm);
 			var index = ingredient.indexOf(rm);
 			if (index > -1) {
 				ingredient.splice(index, 1);
