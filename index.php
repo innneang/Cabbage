@@ -104,7 +104,7 @@ $('#the-basics .typeahead').typeahead({
 	});
 	function addIngredient () {
 		var inp = $("#input").val();
-		if ($.inArray(inp,ingredient) < 0) {
+		if ($.inArray(inp,ingredient) < 0 && inp.length > 0) {
 			console.log('Input not exist!');
 			ingredient.push(inp);
 			$("#ingredient").append('<div class="alert alert-info" role="alert">'+inp+'</div>');
