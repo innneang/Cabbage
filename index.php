@@ -100,7 +100,7 @@ require('config.php');
 			if ($.inArray(inp,ingredient) < 0 && inp.length > 0) {
 				console.log('Input not exist!');
 				ingredient.push(inp);
-				$("#ingredient").append('<div class="alert alert-info" role="alert" onclick="removeIngredient(\''+inp+'\')">'+inp+'</div>');
+				showIngredient();
 			}
 			$("#input").val('');
 			console.log('Datas are '+ingredient.toString());
@@ -112,6 +112,15 @@ require('config.php');
 				ingredient.splice(index, 1);
 			}
 			console.log('Datas are '+ingredient.toString());
+			showIngredient();
+		}
+		function showIngredient () {
+			var text = "";
+			var x;
+			for (x in ingredient) {
+				text += '<div class="alert alert-info" role="alert" onclick="removeIngredient(\''+ingredient[x]+'\')">'+ingredient[x]+'</div>';
+			}
+			$('#ingredient').html(text);
 		}
 	</script>
 </body>
