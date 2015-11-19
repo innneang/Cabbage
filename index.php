@@ -103,6 +103,7 @@ require('config.php');
 				$("#ingredient").append('<div class="alert alert-info" role="alert" onclick="removeIngredient(\''+inp+'\')">'+inp+'</div>');
 			}
 			$("#input").val('');
+			console.log('Datas are '+ingredient.toString());
 		}
 		function removeIngredient (rm) {
 			var index = ingredient.indexOf(rm);
@@ -110,6 +111,7 @@ require('config.php');
 				console.log('Removing '+rm);
 				ingredient.splice(index, 1);
 			}
+			console.log('Datas are '+ingredient.toString());
 		}
 	</script>
 </body>
