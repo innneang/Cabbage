@@ -15,20 +15,10 @@ require('config.php');
 	<title><?=$config['name']?></title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css" />
 	<style>
-		body {
-
-		}
-		.vcenter {
-			display: inline-block;
-			vertical-align: middle;
-			float: none;
-		}
-		main {
-			width:90%;
-			margin:auto;
-			text-align:center;
-		}
+		.vcenter {display: inline-block;vertical-align: middle;float: none;	}
+		main {width:90%;margin:auto;text-align:center;padding-top:40px;}
 		.fullwidth {width:100%;}
+		h1 {font-size:30px;}
 	</style>
 </head>
 <body>
