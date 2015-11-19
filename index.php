@@ -15,19 +15,20 @@ require('config.php');
 	<title><?=$config['name']?></title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css" />
 	<style>
-	body {
+		body {
 
-	}
-	.vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-}
-main {
-	width:90%;
-	margin:auto;
-	text-align:center;
-}
+		}
+		.vcenter {
+			display: inline-block;
+			vertical-align: middle;
+			float: none;
+		}
+		main {
+			width:90%;
+			margin:auto;
+			text-align:center;
+		}
+		.fullwidth {width:100%;}
 	</style>
 </head>
 <body>
@@ -38,8 +39,8 @@ main {
 		</div>
 		<form onsubmit="addIngredient();return false;"><div class="text-center">
 			<div id="the-basics" class="row">
-				<div class="col-md-8"><input class="typeahead" type="text" id="input" placeholder="Ingredient" /></div>
-				<div class="col-md-4"><input type="submit" class="btn btn-secondary" value="เพิ่ม" /></div>
+				<div class="col-md-8"><input class="typeahead fullwidth" type="text" id="input" placeholder="Ingredient" /></div>
+				<div class="col-md-4"><input type="submit" class="btn btn-secondary fullwidth" value="เพิ่ม" /></div>
 			</div>
 			<button type="button" class="btn btn-primary" id="submit">ค้นหา</button>
 		</div></form>
@@ -54,41 +55,41 @@ main {
 		var substringMatcher = function(strs) {
 			return function findMatches(q, cb) {
 				var matches, substringRegex;
-    matches = []; // an array that will be populated with substring matches
-    substrRegex = new RegExp(q, 'i'); // regex used to determine if a string contains the substring `q`
+    				matches = []; // an array that will be populated with substring matches
+				substrRegex = new RegExp(q, 'i'); // regex used to determine if a string contains the substring `q`
+				$.each(strs, function(i, str) {
+					// iterate through the pool of strings and for any string that contains the substring `q`, add it to the `matches` array
+					if (substrRegex.test(str)) {
+    						matches.push(str);
+    					}
+    				});
+				cb(matches);
+			};
+		};
 
-    $.each(strs, function(i, str) { // iterate through the pool of strings and for any string that contains the substring `q`, add it to the `matches` array
-    	if (substrRegex.test(str)) {
-    		matches.push(str);
-    	}
-    });
+		<?php
+		$db=getPDO();
+		$ing=$db->query('SELECT ingredient FROM recipe');
+		$ind=$ing->fetchAll();
+		echo 'var states = [';
+		foreach ($ind as $inv) {
+			$ina=explode(',',$inv[0]);
+			foreach ($ina as $inav) {
+				echo '"'.$inav.'",';
+			}
+		}
+		echo '];';
+		?>
 
-    cb(matches);
-};
-};
-
-<?php
-$db=getPDO();
-$ing=$db->query('SELECT ingredient FROM recipe');
-$ind=$ing->fetchAll();
-echo 'var states = [';
-foreach ($ind as $inv) {
-	$ina=explode(',',$inv[0]);
-	foreach ($ina as $inav) {
-		echo '"'.$inav.'",';
-	}
-}
-echo '];';
-?>
-
-$('#the-basics .typeahead').typeahead({
-	hint: true,
-	highlight: true,
-	minLength: 1
-}, {
-	name: 'states',
-	source: substringMatcher(states)
-});</script>
+		$('#the-basics .typeahead').typeahead({
+			hint: true,
+			highlight: true,
+			minLength: 1
+		}, {
+			name: 'states',
+			source: substringMatcher(states)
+		});
+</script>
 <script>
 	var ingredient = new Array();
 	$(function(){
