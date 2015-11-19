@@ -16,9 +16,9 @@ require('config.php');
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css" />
 	<style>
 		.vcenter {display: inline-block;vertical-align: middle;float: none;	}
-		main {width:90%;margin:auto;text-align:center;padding-top:40px;}
+		main {width:90%;margin:auto;text-align:center;padding-top:60px;}
 		.fullwidth {width:100%;}
-		h1 {font-size:30px;}
+		h1 {font-size:50px;}
 	</style>
 </head>
 <body>
@@ -29,7 +29,7 @@ require('config.php');
 		</div>
 		<form onsubmit="addIngredient();return false;"><div class="text-center">
 			<div id="the-basics" class="row">
-				<div class="col-md-8"><input class="typeahead fullwidth" type="text" id="input" placeholder="Ingredient" /></div>
+				<div class="col-md-8"><input class="typeahead fullwidth" type="text" id="input" placeholder="Ingredient" size="50" /></div>
 				<div class="col-md-4"><input type="submit" class="btn btn-secondary fullwidth" value="เพิ่ม" /></div>
 			</div>
 			<button type="button" class="btn btn-primary" id="submit">ค้นหา</button>
