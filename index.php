@@ -36,8 +36,8 @@ main {
 		</div>
 		<form onsubmit="addIngredient();return false;"><div class="text-center">
 			<div id="the-basics" class="row">
-				<input class="typeahead col-md-8" type="text" id="input" placeholder="Ingredient" />
-				<input type="submit" class="btn btn-secondary col-md-4" value="เพิ่ม" />
+				<div class="col-md-8"><input class="typeahead" type="text" id="input" placeholder="Ingredient" /></div>
+				<div class="col-md-4"><input type="submit" class="btn btn-secondary" value="เพิ่ม" /></div>
 			</div>
 			<button type="button" class="btn btn-primary" id="submit">ค้นหา</button>
 		</div></form>
