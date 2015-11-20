@@ -1,45 +1,22 @@
-<html><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
-<title><?=$config['name']?></title>
-</head><body>
 <?php require('config.php'); ?>
-<div class="cover">
-	<div class="navbar">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#"><span>Brand</span></a>
-			</div>
-			<div class="collapse navbar-collapse" id="navbar-ex-collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li class="active">
-						<a href="#">Home</a>
-					</li>
-					<li>
-						<a href="#">Contacts</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<?php
-	$background = array('https://images.unsplash.com/photo-1428515613728-6b4607e44363?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;s=e522c8e8cbb86cea4129c1e47867dbe9', 'https://images.unsplash.com/photo-1445373466703-25dbffd5f6a5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;s=b8688816b1fbf855521a32ac76e2f99c', 'https://images.unsplash.com/photo-1430931071372-38127bd472b8?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;s=4d8b97be78b1ea15be104ac160d39f61');
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+	<title><?=$config['name']?></title>
+</head>
+<body>
+		<?php
+		$background = array('https://images.unsplash.com/photo-1428515613728-6b4607e44363?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;s=e522c8e8cbb86cea4129c1e47867dbe9', 'https://images.unsplash.com/photo-1445373466703-25dbffd5f6a5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;s=b8688816b1fbf855521a32ac76e2f99c', 'https://images.unsplash.com/photo-1430931071372-38127bd472b8?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;s=4d8b97be78b1ea15be104ac160d39f61');
         //background-image: url('<?php echo $background[array_rand($background)]; ?>');
         ?>
-        
         <div class="cover-image" style="background-color:#2BA3D4"></div>
-        
-        
+
+
         <div class="container">
         	<div class="row">
         		<div class="col-md-12 text-center">
@@ -155,5 +132,5 @@ $('#the-basics .typeahead').typeahead({
 		$('#ingredient').html(text);
 	}
 </script>
-
-</body></html>
+</body>
+</html>
