@@ -22,18 +22,26 @@ if ($key < 1) continue;
 $db=getPDO();
 $ing=$db->prepare($prepare1);
 if ($ing->execute()) {
-  $ind=$ing->fetchAll();
-  foreach ($ind as $inf) { ?>
-  <div class='container'>
+  $ind=$ing->fetchAll();?>
+  <div class='row'>
+ <?php foreach ($ind as $inf) { ?>
+<div class='col-md-4'>
    <div class="card card-inverse" style="background-color: #333; border-color: #333;">
  <!-- <img class="card-img-top" data-src="holder.js/100%x180/" alt="Card image cap">-->
   <div class="card-block">
+      <div class='container'>
     <h4 class="card-title"><a href = "<?=$inf['link']?>"><?=$inf['name']?></a></h4> 
     <p class="card-text text-inverse">Ingredient: <?=$inf['ingredient']?></p>
+    </div>
   </div>
 </div>
 </div>
-  <?php }
+
+
+
+  <?php } ?>
+</div>
+  <?php
 } else {
  echo 'MySQL Fetch Error';
  var_dump($prepare1);
