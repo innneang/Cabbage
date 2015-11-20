@@ -14,38 +14,15 @@ $background = array('https://images.unsplash.com/photo-1428515613728-6b4607e4436
 	<title><?=$config['name']?></title>
 </head>
 <body>
-	<div class="cover">
-		<div class="navbar">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#"><span>Cabbage</span></a>
-				</div>
-				<div class="collapse navbar-collapse" id="navbar-ex-collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="active">
-							<a href="#">Home</a>
-						</li>
-						<li>
-							<a href="#">Contacts</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>            
+	<div class="cover">            
 		<div class="cover-image" style="background-image: url('<?php echo $background[array_rand($background)]; ?>');"></div>
 
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
 
-					<h1 style="text-shadow: 2px 2px 5px grey;" class="text-inverse">มีอะไรในตู้เย็น?</h1>
-					<p style="text-shadow: 2px 2px 5px grey;" class="text-inverse">โลเร็ม อิปซิม</p>
+					<h1 style="text-shadow: 2px 2px 5px grey;" class="text-inverse">มื้อนี้กินอะไรดี?</h1>
+					<p style="text-shadow: 2px 2px 5px grey;" class="text-inverse">กรุณาป้อนข้อมูลวัตถุดิบที่มี</p>
 					<main class="container">
 						<div class='row'>
 							<div id="ingredient" class="col-md-offset-3 col-md-6">
