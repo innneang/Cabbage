@@ -50,15 +50,14 @@
                 </div>
                 <form onsubmit="addIngredient();return false;"><div class="text-center">
                   <div id="the-basics" class="row">
-                    <div class="col-md-10"><input class="typeahead fullwidth" type="text" id="input" placeholder="Ingredient" size="50" /></div>
-                  </div>
-                  <div class='row'>
-                    <div class="col-md-2"><input type="submit" class="btn btn-secondary fullwidth" value="เพิ่ม" /></div>
+                    <div class="col-md-12"><input class="typeahead fullwidth" type="text" id="input" placeholder="Ingredient" size="50" /><input type="submit" class="btn btn-secondary" value="เพิ่ม" /></div>
+                   
                   </div>
                   </div>
                   <button type="button" class="btn btn-primary" id="submit">ค้นหา</button>
                 </div></form>
                 <div id="result">
+
 
                 </div>
               </main>
