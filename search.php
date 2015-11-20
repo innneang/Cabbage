@@ -15,9 +15,10 @@ if (isset($_GET['ingredient'])) {
 require('config.php');
 
 while  (list($var) = each($keyw)){
-  $prepare1 = "SELECT * FROM recipe WHERE FIND_IN_SET(':keyword',ingredient)"
-  $prepare1 = $prepare1 . "AND FIND_IN_SET(". $var . ",ingredient");
+  $prepare1 = "SELECT * FROM recipe WHERE FIND_IN_SET(':keyword',ingredient)";
+  $prepare2 = $prepare1 . "AND FIND_IN_SET(". $var . ",ingredient");
   var_dump($prepare1);
+  var_dump($prepare2);
 }
 $db=getPDO();
 //กำลัง config อย่าแก้
