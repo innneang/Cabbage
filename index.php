@@ -55,7 +55,7 @@
                   <div id="the-basics" class="row">
                     <div class="col-md-6 col-md-offset-3"><input class="form-control typeahead fullwidth" type="text" id="input" placeholder="Ingredient" size="50" /></div>
 
-                   <!-- <div class='col-md-1 visible-lg-*'><input type="submit" class="btn btn-secondary" value="เพิ่ม" /></div>-->
+               <div class='col-md-1 visible-lg-*'><input type="submit" class="btn btn-secondary" value="เพิ่ม" /></div>
                    <br>
             <br>
                   </div>
