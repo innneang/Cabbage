@@ -19,9 +19,7 @@ foreach ($_GET['ingredient'] as $key => $value) {
 if ($key < 1) continue;
  $prepare1 = $prepare1 . " AND FIND_IN_SET('" . $value . "',ingredient)";
 }
-echo $prepare1
 $db=getPDO();
-//กำลัง config อย่าแก้
 $ing=$db->prepare($prepare1);
 if ($ing->execute()) {
   $ind=$ing->fetchAll();
