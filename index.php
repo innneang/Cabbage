@@ -13,7 +13,7 @@ $background = array('https://images.unsplash.com/photo-1428515613728-6b4607e4436
 	<link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
 	<title><?=$config['name']?></title>
 	<style>
-		.tt-input, .tt-hint {width: 396px;height: 60px;padding: 8px 12px;font-size: 24px;line-height: 30px;border: 2px solid #ccc;border-radius: 8px;outline: none;}
+		.tt-input, .tt-hint {max-width: 396px;height: 60px;padding: 8px 12px;font-size: 24px;line-height: 30px;border: 2px solid #ccc;border-radius: 8px;outline: none;}
 			.tt-input {box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);}
 			.tt-hint {color: #999;}
 			.tt-menu {width: 422px;margin-top: 12px;padding: 8px 0;background-color: #fff;border: 1px solid #ccc;border: 1px solid rgba(0, 0, 0, 0.2);border-radius: 8px;box-shadow: 0 5px 10px rgba(0,0,0,.2);}
