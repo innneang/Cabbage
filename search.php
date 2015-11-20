@@ -10,8 +10,11 @@ if (isset($_GET['ingredient'])) {
   $keyw='';
  foreach ($_GET['ingredient'] as $ing) {
    $keyw.=$ing.' ';
+   var_dump($keyw);
  }
  $keyw=trim($keyw);
+ echo 'endvardump';
+ var_dump($keyw);
 require('config.php');
 $db=getPDO();
 $ing=$db->prepare('SELECT * FROM recipe');
