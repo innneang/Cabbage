@@ -15,7 +15,7 @@ if (isset($_GET['ingredient'])) {
 require('config.php');
 
 while  (list($var) = each($keyw)){
-  $prepare1 = "SELECT * FROM recipe WHERE FIND_IN_SET(':keyword',ingredient)";
+  $prepare1 = "SELECT * FROM recipe WHERE FIND_IN_SET('หมู',ingredient)";
   $prepare1 = $prepare1 . "AND FIND_IN_SET(" . $var . ",ingredient)";
   var_dump($prepare1);
 
@@ -23,7 +23,6 @@ while  (list($var) = each($keyw)){
 $db=getPDO();
 //กำลัง config อย่าแก้
 $ing=$db->prepare($prepare1);
-$ing->bindParam(':keyword',$keyw);
 if ($ing->execute()) {
   $ind=$ing->fetchAll();
   foreach ($ind as $inf) { ?>
@@ -37,6 +36,8 @@ if ($ing->execute()) {
   <?php }
 } else {
  echo 'MySQL Fetch Error';
+ var_dump($prepare1);
+
 }
 } else {
   echo 'Empty parameter!';
