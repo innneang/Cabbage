@@ -15,7 +15,7 @@ $background = array('https://images.unsplash.com/photo-1428515613728-6b4607e4436
 </head>
 <body>
 	<div class="cover">            
-		<div class="cover-image" style="background-image: url('<?php echo $background[array_rand($background)]; ?>');"></div>
+		<div class="cover-image" style="background-image: url('<?=$background[array_rand($background)]?>');"></div>
 
 		<div class="container">
 			<div class="row">
