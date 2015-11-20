@@ -1,4 +1,7 @@
-<?php require('config.php'); ?>
+<?php
+require('config.php'); 
+$background = array('https://images.unsplash.com/photo-1428515613728-6b4607e44363?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;s=e522c8e8cbb86cea4129c1e47867dbe9', 'https://images.unsplash.com/photo-1445373466703-25dbffd5f6a5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;s=b8688816b1fbf855521a32ac76e2f99c', 'https://images.unsplash.com/photo-1430931071372-38127bd472b8?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;s=4d8b97be78b1ea15be104ac160d39f61');
+?>
 <!doctype html>
 <html>
 <head>
@@ -8,52 +11,51 @@
 	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
 	<title><?=$config['name']?></title>
+	<style>
+	
+	</style>
 </head>
 <body>
-		<?php
-		$background = array('https://images.unsplash.com/photo-1428515613728-6b4607e44363?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;s=e522c8e8cbb86cea4129c1e47867dbe9', 'https://images.unsplash.com/photo-1445373466703-25dbffd5f6a5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;s=b8688816b1fbf855521a32ac76e2f99c', 'https://images.unsplash.com/photo-1430931071372-38127bd472b8?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;s=4d8b97be78b1ea15be104ac160d39f61');
-        //background-image: url('<?php echo $background[array_rand($background)]; ?>');
-        ?>
-        <div class="cover-image" style="background-color:#2BA3D4"></div>
+	<div class="cover">
+		<div class="cover-image" style="background-color:#2BA3D4"></div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1 class="text-inverse"><?=$config['name']?></h1>
+				<p class="text-inverse">Search recipes from ingredients</p>
+				<main class="container">
+					<div class='row'>
+						<div id="ingredient" class="col-md-offset-3 col-md-6">
+
+						</div>
+					</div>
+					<form onsubmit="addIngredient();return false;"><div class="text-center">
+						<div id="the-basics" class="row">
+							<div class="col-md-5 col-md-offset-3"><input class="form-control typeahead fullwidth" type="text" id="input" placeholder="Ingredient" size="50" /></div>
+
+							<div class='col-md-1'><input type="submit" class="btn btn-secondary" value="เพิ่ม" /></div>
+							<br>
+							<br>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary" id="submit">ค้นหา</button>
+				</div></form>
+				<div id="result">
 
 
-        <div class="container">
-        	<div class="row">
-        		<div class="col-md-12 text-center">
-        			<h1 class="text-inverse"><?=$config['name']?></h1>
-        			<p class="text-inverse">Lorem ipsum dolor sit amet, consectetur adipisici eli.</p>
-        			<main class="container">
-        				<div class='row'>
-        					<div id="ingredient" class="col-md-offset-3 col-md-6">
+				</div>
+			</main>
+		</div>
+	</div>
 
-        					</div>
-        				</div>
-        				<form onsubmit="addIngredient();return false;"><div class="text-center">
-        					<div id="the-basics" class="row">
-        						<div class="col-md-5 col-md-offset-3"><input class="form-control typeahead fullwidth" type="text" id="input" placeholder="Ingredient" size="50" /></div>
-
-        						<div class='col-md-1'><input type="submit" class="btn btn-secondary" value="เพิ่ม" /></div>
-        						<br>
-        						<br>
-        					</div>
-        				</div>
-        				<button type="button" class="btn btn-primary" id="submit">ค้นหา</button>
-        			</div></form>
-        			<div id="result">
-
-
-        			</div>
-        		</main>
-        	</div>
-        </div>
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.jquery.min.js"></script>
-        <script>
-        	var substringMatcher = function(strs) {
-        		return function findMatches(q, cb) {
-        			var matches, substringRegex;
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.jquery.min.js"></script>
+	<script>
+		var substringMatcher = function(strs) {
+			return function findMatches(q, cb) {
+				var matches, substringRegex;
             matches = []; // an array that will be populated with substring matches
         substrRegex = new RegExp(q, 'i'); // regex used to determine if a string contains the substring `q`
         $.each(strs, function(i, str) {
