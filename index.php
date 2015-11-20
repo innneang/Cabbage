@@ -45,9 +45,11 @@
             <h1 class="text-inverse"><?php echo $config['name']; ?></h1>
             <p class="text-inverse">Lorem ipsum dolor sit amet, consectetur adipisici eli.</p>
                         <main class="container">
-                <div id="ingredient">
+                <div class='row'>
+                <div id="ingredient" class="col-md-offset-3 col-md-6">
 
                 </div>
+              </div>
                 <form onsubmit="addIngredient();return false;"><div class="text-center">
                   <div id="the-basics" class="row">
                     <div class="col-md-5 col-md-offset-3"><input class="form-control typeahead fullwidth" type="text" id="input" placeholder="Ingredient" size="50" /></div>
