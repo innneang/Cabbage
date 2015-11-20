@@ -18,7 +18,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span>Brand</span></a>
+            <a class="navbar-brand" href="#"><span>Cabbage</span></a>
           </div>
           <div class="collapse navbar-collapse" id="navbar-ex-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -42,8 +42,9 @@
     <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h1 class="text-inverse"><?php echo $config['name']; ?></h1>
-            <p class="text-inverse">Lorem ipsum dolor sit amet, consectetur adipisici eli.</p>
+
+           <h1 style="text-shadow: 2px 2px 5px grey;" class="text-inverse">มีอะไรในตู้เย็น?</h1>
+            <p style="text-shadow: 2px 2px 5px grey;" class="text-inverse">โลเร็ม อิปซิม</p>
                         <main class="container">
                 <div class='row'>
                 <div id="ingredient" class="col-md-offset-3 col-md-6">
@@ -52,9 +53,9 @@
               </div>
                 <form onsubmit="addIngredient();return false;"><div class="text-center">
                   <div id="the-basics" class="row">
-                    <div class="col-md-5 col-md-offset-3"><input class="form-control typeahead fullwidth" type="text" id="input" placeholder="Ingredient" size="50" /></div>
+                    <div class="col-md-6 col-md-offset-3"><input class="form-control typeahead fullwidth" type="text" id="input" placeholder="Ingredient" size="50" /></div>
 
-                    <div class='col-md-1'><input type="submit" class="btn btn-secondary" value="เพิ่ม" /></div>
+                   <!-- <div class='col-md-1 visible-lg-*'><input type="submit" class="btn btn-secondary" value="เพิ่ม" /></div>-->
                    <br>
             <br>
                   </div>
