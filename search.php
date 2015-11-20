@@ -10,15 +10,17 @@ if (isset($_GET['ingredient'])) {
   $keyw='';
  foreach ($_GET['ingredient'] as $ing) {
    $keyw.=$ing.' ';
-   var_dump($keyw);
+   
  }
  $keyw=trim($keyw);
- echo 'endvardump';
- var_dump($keyw);
+ 
 require('config.php');
+var_dump($keyw);
+echo'fuck';
 $db=getPDO();
-$ing=$db->prepare('SELECT * FROM recipe');
-//$ing->bindParam(':keyword',$keyw);
+//กำลัง config อย่าเสือก
+$ing=$db->prepare("SELECT * FROM recipe WHERE FIND_IN_SET(':keyword',ingredient) AND FIND_IN_SET('พริกไทย',ingredient");
+$ing->bindParam(':keyword',$keyw);
 if ($ing->execute()) {
   $ind=$ing->fetchAll();
   foreach ($ind as $inf) { ?>
