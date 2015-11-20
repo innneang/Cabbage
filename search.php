@@ -12,14 +12,16 @@ if (isset($_GET['ingredient'])) {
    $keyw.=$ing.' ';
    
  }
- $keyw=trim($keyw);
- 
 require('config.php');
-var_dump($keyw);
-echo'fuck';
+
+while  (list($var) = each($keyw)){
+  $prepare1 = "SELECT * FROM recipe WHERE FIND_IN_SET(':keyword',ingredient)"
+  $prepare1 = $prepare1 . "AND FIND_IN_SET(". $var . ",ingredient");
+  var_dump($prepare1);
+}
 $db=getPDO();
-//กำลัง config อย่าเสือก
-$ing=$db->prepare("SELECT * FROM recipe WHERE FIND_IN_SET(':keyword',ingredient) AND FIND_IN_SET('พริกไทย',ingredient");
+//กำลัง config อย่าแก้
+$ing=$db->prepare($prepare1);
 $ing->bindParam(':keyword',$keyw);
 if ($ing->execute()) {
   $ind=$ing->fetchAll();
