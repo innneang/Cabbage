@@ -14,12 +14,12 @@ if (isset($_GET['ingredient'])) {
  }
 require('config.php');
 
-while  (list($var) = each($_GET['ingredient'])){
-  $prepare1 = "SELECT * FROM recipe WHERE FIND_IN_SET('หมู',ingredient)";
-  $prepare1 = $prepare1 . " AND FIND_IN_SET(" . $var . ",ingredient)";
-  var_dump($prepare1);
-
+$prepare1 = "SELECT * FROM recipe WHERE FIND_IN_SET('" . $_GET['ingredient'][0] . "',ingredient)";
+foreach ($_GET['ingredient'] as $key => $value) {
+if ($key < 1) continue;
+ $prepare1 = $prepare1 . " AND FIND_IN_SET('" . $value . "',ingredient)";
 }
+echo $prepare1
 $db=getPDO();
 //กำลัง config อย่าแก้
 $ing=$db->prepare($prepare1);
