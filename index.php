@@ -44,14 +44,17 @@
           <div class="col-md-12 text-center">
             <h1 class="text-inverse"><?php echo $config['name']; ?></h1>
             <p class="text-inverse">Lorem ipsum dolor sit amet, consectetur adipisici eli.</p>
-                        <main class="container vcenter">
+                        <main class="container">
                 <div id="ingredient">
 
                 </div>
                 <form onsubmit="addIngredient();return false;"><div class="text-center">
                   <div id="the-basics" class="row">
-                    <div class="col-md-12"><input class="typeahead fullwidth" type="text" id="input" placeholder="Ingredient" size="50" /><input type="submit" class="btn btn-secondary" value="เพิ่ม" /></div>
-                   
+                    <div class="col-md-5 col-md-offset-3"><input class="form-control typeahead fullwidth" type="text" id="input" placeholder="Ingredient" size="50" /></div>
+
+                    <div class='col-md-1'><input type="submit" class="btn btn-secondary" value="เพิ่ม" /></div>
+                   <br>
+            <br>
                   </div>
                   </div>
                   <button type="button" class="btn btn-primary" id="submit">ค้นหา</button>
