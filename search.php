@@ -14,7 +14,7 @@ if (isset($_GET['ingredient'])) {
  }
 require('config.php');
 
-while  (list($var) = each($keyw)){
+while  (list($var) = each($_GET['ingredient'])){
   $prepare1 = "SELECT * FROM recipe WHERE FIND_IN_SET('หมู',ingredient)";
   $prepare1 = $prepare1 . " AND FIND_IN_SET(" . $var . ",ingredient)";
   var_dump($prepare1);
