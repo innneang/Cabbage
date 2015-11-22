@@ -7,17 +7,13 @@
  */
 header('Content-Type: text/html; charset=utf-8');
 if (isset($_GET['ingredient'])) {
-  $keyw='';
- foreach ($_GET['ingredient'] as $ing) {
-   $keyw.=$ing.' ';
-   
- }
 require('config.php');
 
 $prepare1 = "SELECT * FROM recipe WHERE FIND_IN_SET('" . $_GET['ingredient'][0] . "',ingredient)";
 foreach ($_GET['ingredient'] as $key => $value) {
-if ($key < 1) continue;
- $prepare1 = $prepare1 . " AND FIND_IN_SET('" . $value . "',ingredient)";
+if ($key < 1) {
+ $prepare1 .= " AND FIND_IN_SET('" . $value . "',ingredient)";
+}
 }
 $db=getPDO();
 $ing=$db->prepare($prepare1);
@@ -37,15 +33,11 @@ if ($ing->execute()) {
 </div>
 </div>
 
-
-
   <?php } ?>
 </div>
   <?php
 } else {
  echo 'MySQL Fetch Error';
- var_dump($prepare1);
-
 }
 } else {
   echo 'Empty parameter!';
