@@ -47,7 +47,7 @@ $background = array('https://images.unsplash.com/photo-1428515613728-6b4607e4436
 									<br>
 								</div>
 							</div>
-							<button type="button" class="btn btn-primary" id="submit">ค้นหา</button>
+							<button type="button" style="margin-top:10px;" class="btn btn-primary" id="submit">ค้นหา</button>
 						</div></form>
 						<div id="result">
 
