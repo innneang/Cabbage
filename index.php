@@ -81,10 +81,13 @@ $db=getPDO();
 $ing=$db->query('SELECT ingredient FROM recipe');
 $ind=$ing->fetchAll();
 echo 'var states = [';
+$ingd=array();
 foreach ($ind as $inv) {
 	$ina=explode(',',$inv[0]);
 	foreach ($ina as $inav) {
+  //if array key exist 
 		echo '"'.$inav.'",';
+   $ingd[]=$inav;
 	}
 }
 echo '];';
