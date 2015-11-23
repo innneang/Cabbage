@@ -84,8 +84,8 @@ echo 'var states = [';
 $ingd=array();
 foreach ($ind as $inv) {
 	$ina=explode(',',$inv[0]);
+	$ina = array_unique($ina);
 	foreach ($ina as $inav) {
-  //if array key exist 
 		echo '"'.$inav.'",';
    $ingd[]=$inav;
 	}
