@@ -82,6 +82,7 @@ $ing=$db->query('SELECT ingredient FROM recipe');
 $ind=$ing->fetchAll();
 echo 'var states = [';
 $ingd=array();
+$ind = array_unique($ind);
 foreach ($ind as $inv) {
 	$ina=explode(',',$inv[0]);
 	$ina = array_unique($ina);
