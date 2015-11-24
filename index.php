@@ -82,14 +82,22 @@ $ing=$db->query('SELECT ingredient FROM recipe');
 $ind=$ing->fetchAll();
 echo 'var states = [';
 $ingd=array();
-
+$inin = array();
 foreach ($ind as $inv) {
 	$ina=explode(',',$inv[0]);
 	foreach ($ina as $inav) {
-		echo '"'.$inav.'",';
+		array_push($inin, $inav);
+		
    $ingd[]=$inav;
 	}
 }
+$inin = array_unique($inin);
+
+
+foreach ($inin as $key => $value) {
+	echo '"'.$value.'",';
+}
+
 echo '];';
 ?>
 
