@@ -1,7 +1,8 @@
 # fridgerecipebook
 Playground project by @keenthekeen and @innneang
 
-#สนับสนุน server โดย iinnn
+#Issues
+- Database ขาดหาย หากต้องการใช้ต้องสร้างใหม่เอง อ่าน Database Structure ด้านล่าง
 
 #อ่านก่อน!
 - การเข้าถึงฐานข้อมูล จะใช้ PDO เท่านั้น
